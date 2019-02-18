@@ -1,4 +1,5 @@
 import getpass
+import random
 import pickle
 
 def pwhash(password):
@@ -6,6 +7,9 @@ def pwhash(password):
     for char in password:
         hashedpw += ord(char)
     return hashedpw
+
+def get_salt():
+    return str(random.random())
 
 def get_credentials():
     username = input("Enter username:")
